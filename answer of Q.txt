@@ -1,0 +1,112 @@
+/* 
+1- How to declare a variable in TypeScript?
+ we can use const or let or var and chose name that describe  variable value with type
+ ex const name:string = "salma"
+ but in angular we work with classes so we don`t ceclare with let or const we just declare property with type 
+ ex: name :string
+ */
+ /*
+ 2-Name the access modifiers supported in TypeScript.
+ public: Accessible from anywhere inside and outside the class.
+private: Accessible only within the class itself but from outside is hidden.
+protected: Accessible within the class and its subclasses.
+ */
+ /*3-What are import and export keywords in TypeScript?
+ we can use it to access  method and property in other files
+ any method and property have export keyword we can import it from any file
+ */
+ /* 
+ 4-How can a class constant be implemented in TypeScript?
+ we use const with data that we don`t need to change it and 
+ if we have logic in class we don`t need to change we can use 
+ readonly keyword after property to make it like constsnt
+
+  */
+  /* 
+  5-How to create objects in Typescript? 
+  every property with it`s type
+  ex: const human = {
+  name:string,
+  age:number,
+  adress:string| number,
+  siblings:[string,string]
+}
+  */
+
+  /* 
+  6-Explain Different Data Types in Typescript?
+  number=> with data in type digit or float,
+  string=> any data in two "",
+  object=> {diffrent data tybe},
+  array=>[diffrent data tybe],
+  any,
+  union=> like we give to type for same propety=> address:number|string;
+
+*/
+/* 
+7-Explain Tuples in Typescript With Example
+create array with spacific type to avoid erros
+const data=[number,string]
+ */
+/* What are Objects in TypeScript?
+group of data with different types
+ex: const human = {
+  name:string,
+  age:number,
+  adress:string| number,
+  siblings:[string,string]
+}
+ */
+
+ /* 
+ 9-Explain Classes in TypeScript;
+ classes are blueprint we create it to make many instanses of object we create properties and methods to do the job of class
+ classes have many features like inheritance, encapsulation, and polymorphism
+ classes have three  modifiers :
+ public: Accessible from anywhere inside and outside the class.
+private: Accessible only within the class itself but from outside is hidden.
+protected: Accessible within the class and its subclasses.
+
+classes have readonly keyword to violate constant job
+
+  */
+  /* 
+  10-What is String Interpolation in Angular?
+  this is kind of data binding in angular to insert any data in typescripe file to templete file
+  <p>{{data}}</p>
+   */
+
+   /* 
+   11-What is an ngModule?
+   it is kind of directives use to bind data in two way fron ts to tempelete and from tempelete to ts
+   we need to import FormsModule in typescript file
+   we use it with inputs to input data to typescript
+    */
+
+    /* 
+    12-What are Pipes in Angular? 
+    pipes are feature in angular using to transform data from certin format to another format
+    there is ywo type:built in pipe, custom pipe
+    built in : angular provide them and we import it in typescript file and use it in tempelet in tag elem with"|"
+    ex:<p>{{data.date | date}}</p>
+    custom type: we create it from cli => ng g p search
+    it is class with pipe decorator and method take some parameters to transform data
+     */
+
+    /* 13-What are Components in Angular?
+    components are classes with @component decorator with some metadate that metadata  tell angular this class is component 
+    and we add style, tempelete, imports, providers
+    */
+    /* 
+    14-What are Directives in Angular?
+    Directives are classes do some behavior in component
+    Component Directives: directve with class and tempelete change in  behavior of element
+    Structural Directives:*ngIf, *ngFor, and *ngSwitch this type change Structural dom 
+    Attribute Directives:ngClass, ngStyle => change behavior of element
+    */
+
+    /* 
+    15-What are Single Page Applications (SPA)?
+    wep app with single html page that can render all page without any reloading 
+    this allow application to be fast and with high performence
+     */

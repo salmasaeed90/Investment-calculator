@@ -1,28 +1,76 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-        <div>
-            <label for="initial-investment">Initial Investment</label>
-            <input type="number" [(ngModel)]="initialInvestment" id="initial-investment" name="initial-investment"/>
-        </div>
-         <!--  -->
-        <div>
-            <label for="annual-investment">Annual Investment</label>
-            <input type="number" [(ngModel)]="annualInvestment"  id="annual-investment" name="annual-investment"/>
-        </div>
-       
+<div class="container">
+    <div class="py-5">
+        <form (ngSubmit)="onSubmit()">
+            <div class="row mb-3">
+                <div class="col">
+                    <input class="form-control" 
+                    placeholder="Initial Investment" 
+                    aria-label="Initial Investment"
+                    type="number" 
+                    [(ngModel)]="initialInvestment" 
+                    [ngModelOptions]="{standalone: true}"
+                     />
+                </div>
+                <div class="col">
+                    <input class="form-control"
+                    placeholder="Annual Investment" 
+                    aria-label="Annual Investment"
+                    type="number" 
+                    [(ngModel)]="annualInvestment"
+                    [ngModelOptions]="{standalone: true}"
+                      />  
+                    </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                <input class="form-control"
+                  type="number" 
+                  [(ngModel)]="expectedReturn" 
+                   placeholder="expected-return"  
+                   aria-label="expected-return"
+                   [ngModelOptions]="{standalone: true}"/>
+                </div>
+                <div class="col">
+                <input class="form-control" 
+                 type="number" [(ngModel)]="duration"
+                   placeholder="duration" aria-label="duration"
+                   [ngModelOptions]="{standalone: true}"/>         
+                </div>
+              </div>
+     
+     
+        <button class="btn bg-primary m-auto text-white my-3 py-2 px-5 fs-5" type="submit">Calculate</button>
+    </form>
     </div>
-    <div>
-        <div>
-            <label for="expected-return">Expected Return</label>
-            <input type="number" [(ngModel)]="expectedReturn"  id="expected-return"  name="expected-return"/>
-        </div>
-        <!--  -->
-        <div>
-            <label for="duration">Duration</label>
-            <input type="number" [(ngModel)]="duration"  id="duration" name="duration"/>
-        </div>
-        
-    </div>
-    <button type="submit">Calculate</button>
-</form>
+    
+</div>
+
+
+<div class="container">
+    <table class="table border border-1 ">
+        <thead>
+          <tr>
+            <th scope="col">Year</th>
+            <th scope="col">Investment Value</th>
+            <th scope="col">Investment (year)</th>
+            <th scope="col">Total Interest</th>
+            <th scope="col">Invested Capital</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for(result of calculatResult; track result.year){
+                <tr>
+                    <td scope="row">{{result.year}}</td>
+                    <td>{{result.valueEndOfYear | currency}}</td>
+                    <td>{{result.interest | currency}}</td>
+                    <td>{{result.totalInterest | currency}}</td>
+                    <td>{{result.annualInvestment | currency}}</td>
+                </tr>
+            }
+          
+        </tbody>
+      </table>
+</div>
+
+
 
